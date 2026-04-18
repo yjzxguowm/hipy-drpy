@@ -1,12 +1,12 @@
 {
-    "spider": "./lib/xyqxbpq.jar",
+    "spider": "./jar/xyqxbpq.jar",
     "wallpaper": "https://api.nguaduot.cn/netbian/random",
     "logo": "./logo.gif",
     "warningText": "🍁滴滴滴滴滴滴🍁",
     "sites": [
         {
-            "key": "豆瓣",
-            "name": "豆瓣",
+            "key": "豆瓣追更",
+            "name": "豆瓣追更",
             "type": 3,
             "searchable": 0,
             "changeable": 0,
@@ -16,14 +16,560 @@
             "api": "./lib/apiv57uukw.js"
         },
         {
-            "key": "ss直播",
-            "name": "ss直播",
+            "key": "秋名山直播",
+            "name": "秋名山直播",
             "type": 3,
             "api": "./js/drpy2.min.js",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./js/ss直播.js"
+            "ext": "./js/秋名山直播.js"
+        },
+        {
+            "key": "熊猫直播",
+            "name": "熊猫直播",
+            "type": 3,
+            "api": "./py/熊猫直播.py",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "changeable": 1,
+            "playerType": 2
+        },
+        {
+            "key": "牛牛APP",
+            "name": "牛牛APP",
+            "type": 3,
+            "api": "./js/drpy2.min.js",
+            "ext": "./js/牛牛app.js"
+        },
+        {
+            "key": "青柠视频",
+            "name": "青柠视频",
+            "type": 3,
+            "jar": "./jar/XBPQ.jar",
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.33
+            },
+            "ext": "./json/青柠视频.json"
+        },
+        {
+            "key": "zhornyhub",
+            "name": "zhornyhub4K",
+            "type": 3,
+            "jar": "./jar/XBPQ.jar",
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.33
+            },
+            "ext": "./json/zhornyhub.json"
+        },
+        {
+            "key": "㊙18JAV女优",
+            "name": "㊙18JAV女优",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "style": {
+                "ratio": 1.43
+            },
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/女优.json"
+        },
+        {
+            "key": "线上看女优",
+            "name": "㊙️线上看女优",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "style": {
+                "ratio": 1.43
+            },
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/线上看女优.json"
+        },
+        {
+            "key": "jable选女优",
+            "name": "jable选女优",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./lib/xyqxbpq.jar",
+            "searchable": 1,
+            "style": {
+                "ratio": 1.43
+            },
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/jable选女优.json"
+        },
+        {
+            "key": "jable二级",
+            "name": "jable二级",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "style": {
+                "ratio": 1.43
+            },
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/jable二级.json"
+        },
+        {
+            "key": "隐秘之靴",
+            "name": "隐秘之靴",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./lib/xyqxbpq.jar",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "搜索模式": "1",
+                "直接播放": "1",
+                "搜索url": "https://vkzgtqlfh.yinmi33.vip/vod/search/page/{pg}/wd/{wd}.html",
+                "分类url": "https://vkzgtqlfh.yinmi33.vip/vodtype/{cateId}-{catePg}.html",
+                "链接": "href=\"&&\"[替换:voddetail>>vodplay#.html>>-1-1.html]"
+            },
+            "style": {
+                "type": "rect",
+                "ratio": 1.75
+            }
+        },
+        {
+            "key": "隐秘之穴",
+            "name": "隐秘之穴",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./lib/xyqxbpq.jar",
+            "ext": {
+                "分类url": "https://vkzgtqlfh.yinmi33.vip/vodtype/{cateId}-{catePg}.html",
+                "链接": "href=\"&&\"[替换:voddetail>>vodplay#.html>>-1-1.html]",
+                "直接播放": "1"
+            }
+        },
+        {
+            "key": "狐狸精",
+            "name": "狐狸精",
+            "type": 3,
+            "api": "./py/狐狸精.py",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "changeable": 1,
+            "playerType": 2
+        },
+        {
+            "key": "Hanime",
+            "name": "Hanime",
+            "type": 3,
+            "api": "./py/Hanime.py",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "changeable": 1,
+            "playerType": 2
+        },
+        {
+            "key": "茄子视频",
+            "name": "茄子视频",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/茄子视频.json"
+        },
+        {
+            "key": "jable全分类",
+            "name": "jable全分类",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/jable全分类.json"
+        },
+        {
+            "key": "miss",
+            "name": "miss",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/miss.json"
+        },
+        {
+            "key": "x-ero-anime",
+            "name": "x-ero-anime",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/x-ero-anime.json"
+        },
+        {
+            "key": "8x8x",
+            "name": "8x8x",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/8x8x.json"
+        },
+        {
+            "key": "瓜子社区",
+            "name": "瓜子社区",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/瓜子社区.json"
+        },
+        {
+            "key": "truvaze",
+            "name": "💗【 truvaze 】XB®",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "style": {
+                "type": "rect",
+                "ratio": 1.05
+            },
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/truvaze.json"
+        },
+        {
+            "key": "csp_xBPQ_搞aa",
+            "name": "🔞GAOAA(XBPQ)",
+            "type": 3,
+            "api": "csp_XYQHiker",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0,
+            "playerType": 2,
+            "jar": "./jar/Lgexbpq.jar",
+            "ext": "./json/X(Twitter)黑料.json"
+        },
+        {
+            "key": "cat_123TV",
+            "name": "cat_123TV",
+            "type": 3,
+            "api": "./js/cat_123TV.js",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1
+        },
+        {
+            "key": "cat_AVHUB",
+            "name": "cat_AVHUB",
+            "type": 3,
+            "api": "./js/AVHUB.js",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1
+        },
+        {
+            "key": "禁片天堂",
+            "name": "禁片天堂",
+            "type": 3,
+            "api": "./py/禁片天堂.py",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "playerType": 2
+        },
+        {
+            "key": "蒜鸟",
+            "name": "蒜鸟",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/蒜鸟.json"
+        },
+        {
+            "key": "91jav2",
+            "name": "91jav2",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/91jav2.json"
+        },
+        {
+            "key": "语言",
+            "name": "语言",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/语言.json"
+        },
+        {
+            "key": "Caosp_xbpq",
+            "name": "✨Caosp✨",
+            "type": 3,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "api": "csp_XBPQ",
+            "jar": "./jar/Lgexbpq.jar",
+            "style": {
+                "type": "rect",
+                "ratio": 1.33
+            },
+            "ext": {
+                "主页url": "https://cao.caosp4.cc/a/",
+                "分类url": "https://cao.caosp4.cc/a/index.php/vod/type/id/{cateId}/page/{catePg}.html",
+                "分类数组": "p:div[class*=\"nav-section\"] a",
+                "分类标题": "p:->text",
+                "分类ID": "/a/index.php/vod/type/id/&&.html",
+                "数组": "p:a[class*=\"vod-item\"]",
+                "标题": "p:->alt",
+                "副标题": "🔞才是源动力",
+                "图片": "p:img->data-original",
+                "链接": "p:->href",
+                "线路数组": "p:.play-section .section-title",
+                "线路标题": "p:.section-title->text",
+                "播放数组": "p:.play-list",
+                "播放列表": "p:a",
+                "播放标题": "p:a->text",
+                "播放链接": "p:a->href",
+                "搜索url": "https://cao.caosp4.cc/a/index.php/vod/search/page/{pg}/wd/{wd}.html",
+                "搜索数组": "p:a[class*=\"vod-item\"]",
+                "搜索图片": "p:img->data-original",
+                "搜索标题": "p:->alt",
+                "搜索链接": "p:->href"
+            }
+        },
+        {
+            "key": "Caosp",
+            "name": "Caosp",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/Caosp.json"
+        },
+        {
+            "key": "🈲Pornhub[🈲]",
+            "name": "🈲Pornhub[🈲]",
+            "type": 3,
+            "api": "./js/drpy2.min.js",
+            "ext": "./js/🈲Pornhub[🈲].js"
+        },
+        {
+            "key": "Missav🔥🔞",
+            "name": "Missav🔥🔞",
+            "type": 3,
+            "api": "./js/drpy2.min.js",
+            "ext": "./js/Missav.js"
+        },
+        {
+            "key": "小编私藏版",
+            "name": "✨小编私藏版✨",
+            "type": 3,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "api": "csp_XBPQ",
+            "jar": "./jar/Lgexbpq.jar",
+            "style": {
+                "type": "rect",
+                "ratio": 1.33
+            },
+            "ext": {
+                "主页url": "https://1dpicd6h.sicang12.cc/力争上游/",
+                "分类url": "https://1dpicd6h.sicang12.cc/vodtype/{cateId}-{catePg}.html",
+                "分类数组": "p:div.top-menu a",
+                "分类标题": "p:->text",
+                "分类ID": "/vodtype/&&.html",
+                "数组": "p:div.models-videos__col",
+                "标题": "p:p->text",
+                "副标题": "p:span->text+人观看+p:span->text[含序号:2]",
+                "图片": "p:img->data-src",
+                "链接": "p:->href[替换:voddetail>>vodplay#.html>>-1-1.html]",
+                "线路数组": "p:div.videos-player-wrapper script",
+                "线路标题": "from\":\"&&\"",
+                "播放数组": "p:div.videos-player-wrapper script",
+                "播放列表": "{&&}",
+                "播放标题": "在线播放",
+                "播放链接": "url\":\"&&\""
+            }
+        },
+        {
+            "key": "18JAV几类",
+            "name": "18JAV几类",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/18JAV几类.json"
+        },
+        {
+            "key": "18JAV女优",
+            "name": "18JAV女优",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/18JAV女优.json"
+        },
+        {
+            "key": "文明强国",
+            "name": "文明强国",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/文明强国.json"
+        },
+        {
+            "key": "乐哥最爱擦B短剧",
+            "name": "乐哥最爱擦B短剧",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/乐哥最爱擦B短剧.json"
+        },
+        {
+            "key": "极乐禁区搜索",
+            "name": "极乐禁区搜索",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/极乐禁区搜索.json"
+        },
+        {
+            "key": "极乐国产禁区",
+            "name": "极乐国产🔞",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "主页url": "https://iegeewiet-4mag.hscwang26y2m.xyz/jlhs",
+                "二次截取": "thumbnail-group&&<script>",
+                "数组": "<li&&</li>",
+                "标题": ">&&</a></h5>",
+                "副标题": "🔞少看少撸",
+                "图片": "data-original=\"&&\"",
+                "链接": "/vodplay/+/voddetail/&&/+-1-1/",
+                "直接播放": "1",
+                "分类url": "https://iegeewiet4mag.hscwang26y2m.xyz/vodtype/{cateId}-{catePg}/",
+                "分类数组": "<dd&&/dd>",
+                "分类标题": ">&&</a",
+                "分类ID": "/vodtype/&&/"
+            }
+        },
+        {
+            "key": "绿草AV",
+            "name": "绿草AV",
+            "type": 3,
+            "jar": "./jar/Lgexbpq.jar",
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "数组": "<a&&</a>",
+                "标题": "alt=\"&&\"",
+                "图片": "src=\"&&\"",
+                "链接": "href=\"&&\"[替换:detail>>conter]",
+                "嗅探词": ".mp4#.m3u8",
+                "直接播放": "1",
+                "跳转播放链接": "Play=&&\\&",
+                "搜索模式": "1",
+                "搜索url": "https://w.lvcao.lat/?m=video_search*{wd}*{pg}",
+                "分类url": "https://w.lvcao.lat/?m=video_list*{cateId}*{catePg};;z",
+                "分类": "中文字幕$5#主播秀色$2#性感人妻$7#欧美情色$9#日本无码$4#精品推荐$1#日本有码$3#强奸乱伦$8#童颜巨乳$6#网曝系列$16#日本片商$14#丝袜OL$12#自拍偷拍$13#三级伦理$10#剧情介绍$15#卡通动漫$11#同性恋$17#探花嫖娼$18#凌辱快感$26#明星换脸$24#国产丝袜$21#国产乱伦$23#主奴调教$25#国产人妻$19#国产SM$20#麻豆传媒$22#多人群交$27#角色剧情$28#港台辣妹$29#重口性癖$30#变性伪娘$31#VR视角$32#"
+            }
+        },
+        {
+            "key": "youporn",
+            "name": "youporn",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/youporn.json"
+        },
+        {
+            "key": "pornhub",
+            "name": "pornhub",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/XBPQ.jar",
+            "ext": "./json/pornhub.json"
+        },
+        {
+            "key": "快播AV",
+            "name": "快播AV",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "jar": "./jar/XBPQ.jar",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "数组": "maoplay&&</span>",
+                "标题": "title=\"&&\"",
+                "副标题": ">&&</span>",
+                "图片": "src=\"&&\"",
+                "链接": "href=\"&&\"",
+                "搜索模式": "1",
+                "搜索url": "https://www.kuaibojq.com/vod/search/page/{pg}/wd/{wd}/",
+                "分类url": "https://www.kuaibojq.com/maotype/{cateId}-{catePg}/;;z"
+            }
         },
         {
             "key": "艾蛋影视",
@@ -57,6 +603,74 @@
                 "搜索url": "https://20260313bb-bnm.mitaoava02.top/index.php/vod/search/page/{pg}/wd/{wd}.html",
                 "分类url": "https://20260313bb-bnm.mitaoava02.top/index.php/vod/type/id/{cateId}/page/{catePg}.html",
                 "分类": "国产无码$guochanwuma#国产口爆$yazhoukoujiao#日韩无码$rihanwuma#亚洲群交$yazhouqunjiao#国产热门$guochanremen#海边偷拍$haibiantoupai#偷情车震$touqingchezhen#污污动漫$wuwudongman#拉拉群交$lalaqunjiao#Gay群交$gayqunjiao#欧美精选$oumeijingxuan#自慰手淫$ziweishouyin#N女群欢$nnvqunhuan#美臀诱惑$meitunyouhuo#麻豆传媒$madouchuanmei#天美传媒$tianmeichuanmei#皇家华人$huangjiahuaren#精东影业$jingdongyingye#起点传媒$qidianchuanmei#"
+            }
+        },
+        {
+            "key": "WhosTV",
+            "name": "whosTV",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "主页url": "https://whos.tv/frames/type-other",
+                "编码": "UTF-8",
+                "数组": "frame-card&&</a",
+                "标题": "alt=\"&&\"",
+                "图片": "<imgsrc=\"&&\"",
+                "链接": "data-share-url=\"&&\"",
+                "播放数组": "mt-3&&</div>",
+                "倒序": "0",
+                "播放列表": "<a&&/a>",
+                "播放标题": "</span>&&<",
+                "播放链接": "href=\"&&\"",
+                "跳转播放链接": "<sourcesrc=\"&&\"",
+                "分类url": "https://whos.tv/frames/type-other/label-{cateId}/page-{catePg}",
+                "分类二次截取": "id=\"sub-category&&</div>",
+                "分类数组": "<a&&</a>",
+                "分类标题": ">&&<",
+                "分类ID": "/frames/type-other/label-&&\""
+            }
+        },
+        {
+            "key": "✨WhosTV✨",
+            "name": "✨WhosTV✨",
+            "type": 3,
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "api": "./py/WhosTV.py",
+            "order_num": 5,
+            "ext": ""
+        },
+        {
+            "key": "Whos",
+            "name": "Whos",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "数组": "/frames&&</a>[不包含:Whos.tv]",
+                "标题": "alt=\"&&\"",
+                "图片": "src=\"&&\"",
+                "副标题": "text-white\">&&<",
+                "链接": "/frames/+/&&\"",
+                "简介": "description\"content=\"&&\"",
+                "分类url": "https://whos.tv/frames/type-{cateId}/page-{catePg}",
+                "线路数组": "<spanclass=\"text-primaryfont-boldtext-basegroup-hover:underline\">&&</span>",
+                "线路标题": "✨乐哥最爱",
+                "播放数组": "class=\"mt-3flexgap-2&&</div>",
+                "播放列表": "<a&&</a>",
+                "播放标题": "</span>&&</a>",
+                "播放链接": "href=\"&&\"",
+                "跳转播放链接": "<sourcesrc=\"&&\"",
+                "分类": "服装$clothes#地点$location#特写$closeup#姿势$pose#行为$action#表情$expression#道具$prop#其他$other#"
             }
         },
         {
@@ -440,7 +1054,7 @@
             "filterable": 1,
             "quickSearch": 1,
             "api": "csp_XBPQ",
-            "jar": "./lib/xyqxbpq.jar",
+            "jar": "./jar/xyqxbpq.jar",
             "ext": {
                 "作者": "枸杞少女",
                 "请求头": "User-Agent$MOBILE_UA",
@@ -821,20 +1435,6 @@
             }
         },
         {
-            "key": "线上看女优",
-            "name": "㊙️线上看女优",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "jar": "./lib/xyqxbpq.jar",
-            "searchable": 1,
-            "style": {
-                "ratio": 1.43
-            },
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./lib/线上看女优.json"
-        },
-        {
             "key": "五马抖音",
             "name": "五马抖音",
             "type": 3,
@@ -1100,16 +1700,6 @@
                 "type": "rect",
                 "ratio": 1.5
             }
-        },
-        {
-            "key": "py_Miss",
-            "name": "🔞MissAV(T4)",
-            "type": 4,
-            "api": "https://py.doube.eu.org/spider?site=Miss",
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0,
-            "changeable": 0
         },
         {
             "key": "py_AiDou",
@@ -1480,7 +2070,7 @@
             "name": "请多吃枸杞",
             "type": 3,
             "api": "csp_XBPQ",
-            "jar": "./lib/xyqxbpq.jar",
+            "jar": "./jar/xyqxbpq.jar",
             "style": {
                 "ratio": 1.7
             },
@@ -1505,22 +2095,12 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "api": "./ilb/Miss.py",
+            "api": "./lib/Miss.py",
             "ext": {
                 "site": "https://missav.ai",
-                "cfgo": "./ilb/cf-proxy-linux-arm64",
+                "cfgo": "./lib/cf-proxy-linux-arm64",
                 "proxy": {}
             }
-        },
-        {
-            "key": "py_Miss",
-            "name": "(翻墙)(18+)MissAV(T4)",
-            "type": 4,
-            "api": "https://py.doube.eu.org/spider?site=Miss",
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0,
-            "changeable": 0
         },
         {
             "key": "夜夜新郎",
@@ -1742,7 +2322,7 @@
             "name": "🍉黄色仓库",
             "type": 3,
             "api": "csp_XBPQ",
-            "jar": "./lib/xyqxbpq.jar",
+            "jar": "./jar/xyqxbpq.jar",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
@@ -1892,6 +2472,74 @@
             "api": "https://91md.me/api.php/provide/vod/",
             "searchable": 1,
             "changeable": 1
+        },
+        {
+            "key": "wg_supjav_GM",
+            "name": "🇹Supjav┃GM",
+            "type": 3,
+            "searchable": 1,
+            "changeable": 1,
+            "style": {
+                "type": "rect",
+                "ratio": 1.48
+            },
+            "api": "csp_GM",
+            "jar": "./jar/GM.jar",
+            "ext": {
+                "userScript": "./js/supjav.user.js",
+                "debug": false,
+                "webViewSettings": {
+                    "blockNetworkImage": false,
+                    "blockList": [
+                        "https://*.adforcast.com/*",
+                        "https://*.adxadserv.com/*",
+                        "https://*.bbrdbr.com/*",
+                        "https://*.fanza.cc/*",
+                        "https://*.google-analytics.com/*",
+                        "https://*.googletagmanager.com/*",
+                        "https://*.mnaspm.com/*",
+                        "https://*.recombee.com/*",
+                        "https://*.sacdnssedge.com/*",
+                        "https://*.tapioni.com/*",
+                        "https://*.yandex.ru/*",
+                        "https://*/prebid.min.js",
+                        "https://divisiondrearilyunfiled.com/*",
+                        "https://endowmentoverhangutmost.com/*",
+                        "https://imasdk.googleapis.com/*",
+                        "https://psoroumukr.com/*",
+                        "https://static.ads-twitter.com/*",
+                        "https://streamhg.com/*"
+                    ]
+                },
+                "playUrlMatch": [
+                    "https://*.cdn-centaurus.com/*/master.m3u8*",
+                    "https://*.cloudatacdn.com/*",
+                    "https://*.cloudflarestorage.com/*",
+                    "https://*.linkofnyz.com/*.m3u8*",
+                    "https://*.tapecontent.net/*",
+                    "https://*.turboviplay.*/*.m3u8",
+                    "https://*.voe-network.net/*/master.m3u8*",
+                    "https://dood.la/pass_md5/*",
+                    "https://streamtape.com/get_video*"
+                ],
+                "spider": {
+                    "homeContent": {
+                        "loadUrl": "https://supjav.com/zh/popular"
+                    },
+                    "categoryContent": {
+                        "loadUrl": "https://supjav.com/zh/${tid}/page/${pg:-1}?sort=${sort:-quantity}"
+                    },
+                    "detailContent": {
+                        "loadUrl": "https://supjav.com/zh/${id}"
+                    },
+                    "playerContent": {
+                        "loadUrl": "https://supjav.com/zh/${pathname}#${link}"
+                    },
+                    "searchContent": {
+                        "loadUrl": "https://supjav.com/zh/page/${pg:-1}?s=${key}"
+                    }
+                }
+            }
         },
         {
             "key": "黄AV",

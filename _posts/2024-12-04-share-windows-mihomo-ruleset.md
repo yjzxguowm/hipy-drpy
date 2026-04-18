@@ -84,6 +84,8 @@ dns:
     - RULE-SET,apple-cn,real-ip
     - RULE-SET,google-cn,real-ip
     - RULE-SET,games-cn,real-ip
+    - RULE-SET,games,fake-ip
+    - RULE-SET,ai,fake-ip
     - RULE-SET,proxy,fake-ip
     - RULE-SET,private,real-ip
     - RULE-SET,cn,real-ip
@@ -289,6 +291,59 @@ rules:
 
 ---
 
+>`DNS` 私货
+{: .prompt-tip }
+
+注：
+- ① 本 `dns` 配置中，国外域名走 `fake-ip`，国内域名走国内 DNS 解析，未知域名走 `fake-ip`，在匹配 `RULE-SET:cn` 规则时会由国外 DNS 解析且配置 `ecs` 提高了兼容性，解析出 IP 在国内则走 `国内 IP` 规则，否则走 `漏网之鱼` 规则（有效解决了“心理 DNS 泄露问题”，详见《[搭载 mihomo 内核配置 DNS 不泄露教程-ruleset 方案](https://proxy-tutorials.dustinwin.us.kg/posts/dnsnoleaks-mihomo-ruleset/)》）
+- ② 推荐将 `ecs` 设置为当前宽带运营商分配的默认 DNS（可进入光猫或路由器拨号页面查看，或者前往[公共 DNS 大全](https://toolb.cn/publicdns)查询）的 IP 段，如默认 DNS 为 `211.137.58.20`，可设置为 `211.137.58.0/24`
+
+```yaml
+hosts:
+  miwifi.com: [192.168.31.1, 127.0.0.1]
+  dns.alidns.com: [223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1]
+  doh.pub: [1.12.12.12, 120.53.53.53, 2402:4e00::]
+  dns.google: [8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844]
+  dns11.quad9.net: [9.9.9.11, 149.112.112.11, 2620:fe::11, 2620:fe::fe:11]
+
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.0/8
+  fake-ip-range6: fc00::/16
+  fake-ip-filter-mode: rule
+  fake-ip-filter:
+    - RULE-SET,trackerslist,real-ip
+    - RULE-SET,microsoft-cn,real-ip
+    - RULE-SET,apple-cn,real-ip
+    - RULE-SET,google-cn,real-ip
+    - RULE-SET,games-cn,real-ip
+    - RULE-SET,games,fake-ip
+    - RULE-SET,ai,fake-ip
+    - RULE-SET,proxy,fake-ip
+    - RULE-SET,private,real-ip
+    - RULE-SET,cn,real-ip
+    - MATCH,fake-ip
+  respect-rules: true
+  nameserver:
+    # 推荐将 `ecs` 设置为当前宽带运营商分配的默认 DNS 的 IP 段
+    - 'https://dns.google/dns-query#ecs=211.137.58.0/24'
+    - 'https://dns11.quad9.net/dns-query#ecs=211.137.58.0/24'
+  proxy-server-nameserver:
+    - quic://dns.alidns.com:853
+    - https://doh.pub/dns-query
+  direct-nameserver:
+    - quic://dns.alidns.com:853
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    'rule-set:ads': [rcode://success]
+    'rule-set:trackerslist,microsoft-cn,apple-cn,google-cn,games-cn,private,cn': [quic://dns.alidns.com:853, https://doh.pub/dns-query]
+```
+
+---
+
 >`proxy-groups` 私货
 {: .prompt-tip }
 
@@ -365,11 +420,12 @@ Windows Registry Editor Version 5.00
         if [ -f "./mihomo/mihomo.exe" ]; then
           echo "检测到已安装 mihomo 内核，是否更新？（Y/n）"
           while true; do
-            read -r choice
+            read -n1 -r choice
             case $choice in
-              Y|y)
+              [Yy])
+                echo
                 echo "下载 mihomo 内核..."
-                curl -o "$USERPROFILE/Downloads/mihomo.exe" -L https://ghfast.top/https://github.com/DustinWin/proxy-tools/releases/download/mihomo/mihomo-meta-windows-amd64-v3.exe
+                curl -sS -o "$USERPROFILE/Downloads/mihomo.exe" -L https://ghfast.top/https://github.com/DustinWin/proxy-tools/releases/download/mihomo/mihomo-meta-windows-amd64-v3.exe
                 echo "下载 mihomo 内核成功"
 
                 echo "结束 mihomo 相关进程..."
@@ -381,20 +437,21 @@ Windows Registry Editor Version 5.00
                 if [ -f "./mihomo/profiles/config.yaml" ]; then
                   echo "更新 mihomo 内核成功，是否启动服务？（Y/n）"
                   while true; do
-                    read -r choice
+                    read -n1 -r choice
                     case $choice in
-                      Y|y)
+                      [Yy])
+                        echo
                         echo "启动 mihomo 服务..."
                         cd ./mihomo
                         start //min mihomo.exe run
                         read -n1 -r -p "启动 mihomo 服务成功，按任意键返回菜单..."
                         break
                         ;;
-                      N|n)
-                        read -n1 -r -p "取消启动服务，按任意键返回菜单..."
+                      [Nn])
                         break
                         ;;
                       *)
+                        echo
                         echo "无效选择，请重新输入！"
                         ;;
                     esac
@@ -406,11 +463,11 @@ Windows Registry Editor Version 5.00
                   break
                 fi
                 ;;
-              N|n)
-                read -n1 -r -p "取消更新内核，按任意键返回菜单..."
+              [Nn])
                 break
                 ;;
               *)
+                echo
                 echo "无效选择，请重新输入！"
                 ;;
             esac
@@ -418,8 +475,8 @@ Windows Registry Editor Version 5.00
         else
           echo "检测到未安装 mihomo 内核，正在安装..."
           mkdir -p ./mihomo/ui
-          curl -o ./mihomo/mihomo.exe -L https://ghfast.top/https://github.com/DustinWin/proxy-tools/releases/download/mihomo/mihomo-meta-windows-amd64-v3.exe
-          curl -L https://ghfast.top/https://github.com/DustinWin/proxy-tools/releases/download/Dashboard/zashboard.tar.gz | tar -zx -C ./mihomo/ui
+          curl -sS -o ./mihomo/mihomo.exe -L https://ghfast.top/https://github.com/DustinWin/proxy-tools/releases/download/mihomo/mihomo-meta-windows-amd64-v3.exe
+          curl -sS -L https://ghfast.top/https://github.com/DustinWin/proxy-tools/releases/download/Dashboard/zashboard.tar.gz | tar -zx -C ./mihomo/ui
           echo "安装 mihomo 内核和面板成功"
 
           echo "赋予 mihomo 权限..."
@@ -439,20 +496,21 @@ Windows Registry Editor Version 5.00
       2)
         ask_run(){
           while true; do
-            read -r choice
+            read -n1 -r choice
             case $choice in
-              Y|y)
+              [Yy])
+                echo
                 echo "启动 mihomo 服务..."
                 cd ./mihomo
                 start //min mihomo.exe run
                 read -n1 -r -p "启动 mihomo 服务成功，按任意键返回菜单..."
                 break
                 ;;
-              N|n)
-                read -n1 -r -p "取消启动服务，按任意键返回菜单..."
+              [Nn])
                 break
                 ;;
               *)
+                echo
                 echo "无效选择，请重新输入！"
                 ;;
             esac
@@ -465,11 +523,12 @@ Windows Registry Editor Version 5.00
           if [ -f "./mihomo/profiles/config.yaml" ]; then
             echo "检测到配置文件，是否更新？（Y/n）"
             while true; do
-              read -r choice
+              read -n1 -r choice
               case $choice in
-                Y|y)
+                [Yy])
+                  echo
                   echo "下载配置文件..."
-                  curl -o "$USERPROFILE/Downloads/config.yaml" -L https://ghfast.top/{.yaml 配置文件直链}
+                  curl -sS -o "$USERPROFILE/Downloads/config.yaml" -L https://ghfast.top/{.yaml 配置文件直链}
                   echo "下载配置文件成功"
 
                   echo "结束 mihomo 相关进程..."
@@ -482,11 +541,11 @@ Windows Registry Editor Version 5.00
                   ask_run
                   break
                   ;;
-                N|n)
-                  read -n1 -r -p "取消更新配置文件，按任意键返回菜单..."
+                [Nn])
                   break
                   ;;
                 *)
+                  echo
                   echo "无效选择，请重新输入！"
                   ;;
               esac
@@ -494,7 +553,7 @@ Windows Registry Editor Version 5.00
           else
             echo "未检测到配置文件，导入配置文件..."
             mkdir -p ./mihomo/profiles
-            curl -o "$USERPROFILE/Downloads/config.yaml" -L https://ghfast.top/{.yaml 配置文件直链}
+            curl -sS -o "$USERPROFILE/Downloads/config.yaml" -L https://ghfast.top/{.yaml 配置文件直链}
             mv -f "$USERPROFILE/Downloads/config.yaml" ./mihomo/profiles
             echo "导入配置文件成功，是否启动服务？（Y/n）"
             ask_run
